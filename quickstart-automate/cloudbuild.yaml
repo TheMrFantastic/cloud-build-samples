@@ -16,7 +16,7 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 steps:
-  - name: 'gcr.io/cloud-builders/docker'  # Use the official Docker builder image
+  - name: 'gcr.io/uk-sovops-region-automation/habibtestrepo'  # Use the official Docker builder image
     args: ['build', '-t', 'hello-world', '.']  # Build the image, tag it as 'hello-world'
   # Uncomment the following lines if you want to push the image to a registry
   # - name: 'gcr.io/cloud-builders/docker' 
