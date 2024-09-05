@@ -13,13 +13,18 @@
 # limitations under the License.
 
 # [START cloudbuild_quickstart_automate]
-options:
-  logging: CLOUD_LOGGING_ONLY
 steps:
-  - name: 'europe-north1-docker.pkg.dev/uk-sovops-region-automation/habibtestrepo'  # Use the official Docker builder image
-    args: ['build', '-t', 'hello-world', '.']  # Build the image, tag it as 'hello-world'
-  # Uncomment the following lines if you want to push the image to a registry
-  # - name: 'gcr.io/cloud-builders/docker' 
-  #   args: ['push', 'hello-world']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['pull', 'hello-world:latest'] # Pull the latest hello-world image
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'hello-world:latest', 'europe-north1-docker.pkg.dev/uk-sovops-region-automation/habibtestrepo/hello-world:latest'] 
+  # Tag the image for your Artifact Registry
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'LOCATION-docker.pkg.dev/PROJECT-ID/habibtestrepo/hello-world:latest']
+  # Push the tagged image to your Artifact Registry
+images: 
+- 'LOCATION-docker.pkg.dev/PROJECT-ID/habibtestrepo/hello-world:latest'
 
 # [END cloudbuild_quickstart_automate]
