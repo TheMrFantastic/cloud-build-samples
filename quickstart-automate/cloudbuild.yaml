@@ -13,9 +13,9 @@
 # limitations under the License.
 
 # [START cloudbuild_quickstart_automate]
+# [START cloudbuild_quickstart_automate]
 options:
-  logging: 'LEGACY'  # Or 'CLOUD_LOGGING_ONLY' if you prefer
-  logs_bucket: 'gs://habibtestbucket'  # Specify your log bucket here
+  logging: 'CLOUD_LOGGING_ONLY'  # Or 'NONE' to disable logs entirely
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['pull', 'hello-world:latest'] # Pull the latest hello-world image
@@ -27,7 +27,11 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'europe-north1-docker.pkg.dev/uk-sovops-region-automation/habibtestrepo/hello-world:latest']
   # Push the tagged image to your Artifact Registry
+
 images: 
 - 'europe-north1-docker.pkg.dev/uk-sovops-region-automation/habibtestrepo/hello-world:latest'
+
+# [END cloudbuild_quickstart_automate]
+
 
 # [END cloudbuild_quickstart_automate]
