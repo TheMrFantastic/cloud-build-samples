@@ -14,7 +14,8 @@
 
 # [START cloudbuild_quickstart_automate]
 options:
-  logging: 'LEGACY'
+  logging: 'LEGACY'  # Or 'CLOUD_LOGGING_ONLY' if you prefer
+  logs_bucket: 'gs://habibtestbucket'  # Specify your log bucket here
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['pull', 'hello-world:latest'] # Pull the latest hello-world image
