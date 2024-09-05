@@ -15,7 +15,7 @@
 # [START cloudbuild_quickstart_automate]
 options:
   logging: GCS_LOGGING
-  gcs_log_bucket: 'gs://habibtestbucket' # Add this line
+  gcs_log_bucket: 'gs://habibtestbucket' 
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['pull', 'hello-world:latest'] # Pull the latest hello-world image
