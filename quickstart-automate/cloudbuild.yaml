@@ -13,8 +13,8 @@
 # limitations under the License.
 
 # [START cloudbuild_quickstart_automate]
-options:
-  logging: CLOUD_LOGGING_ONLY
+#options:
+#  logging: CLOUD_LOGGING_ONLY
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['pull', 'hello-world:latest'] # Pull the latest hello-world image
