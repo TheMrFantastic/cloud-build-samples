@@ -24,7 +24,7 @@ steps:
   # Tag the image for your Artifact Registry
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'LOCATION-docker.pkg.dev/PROJECT-ID/habibtestrepo/hello-world:latest']
+  args: ['push', 'europe-north1-docker.pkg.dev/uk-sovops-region-automation/habibtestrepo/hello-world:latest']
   # Push the tagged image to your Artifact Registry
 images: 
 - 'LOCATION-docker.pkg.dev/PROJECT-ID/habibtestrepo/hello-world:latest'
