@@ -27,6 +27,6 @@ steps:
   args: ['push', 'europe-north1-docker.pkg.dev/uk-sovops-region-automation/habibtestrepo/hello-world:latest']
   # Push the tagged image to your Artifact Registry
 images: 
-- 'LOCATION-docker.pkg.dev/PROJECT-ID/habibtestrepo/hello-world:latest'
+- 'europe-north1-docker.pkg.dev/uk-sovops-region-automation/habibtestrepo/hello-world:latest'
 
 # [END cloudbuild_quickstart_automate]
